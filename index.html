@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluline - Global Pollution Prevention Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: white;
+            overflow-x: hidden;
+        }
+
+        /* Header - Minimal & Clean */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #1a1a1a;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            margin-left: 3rem;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #1a1a1a;
+        }
+
+        /* Hero - Magazine Style with Rotating Background */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 4rem 4rem 4rem;
+            position: relative;
+            margin-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-bg-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .hero-bg-slide.active {
+            opacity: 1;
+        }
+
+        /* Hero Background Images - Urban Infrastructure Theme */
+        /* REPLACE 'YOUR_IMAGE_11_URL_HERE' with the actual URL of your drainage cover image */
+        .hero-bg-slide:nth-child(1) {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('YOUR_IMAGE_11_URL_HERE');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-bg-slide:nth-child(2) {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-bg-slide:nth-child(3) {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-label {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 5.5rem;
+            line-height: 1.1;
+            font-weight: 300;
+            color: white;
+            margin-bottom: 2.5rem;
+            max-width: 1100px;
+            letter-spacing: -2px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 strong {
+            font-weight: 600;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.95);
+            max-width: 750px;
+            margin-bottom: 4rem;
+            font-weight: 300;
+            text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+        }
+
+        .cta-primary {
+            display: inline-block;
+            padding: 1.2rem 3.5rem;
+            background: white;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid white;
+        }
+
+        .cta-primary:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Trust Section - Minimal */
+        .trust-section {
+            padding: 6rem 4rem;
+            background: white;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .trust-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 4rem;
+            text-align: center;
+        }
+
+        .trust-item {
+            padding: 2rem 0;
+        }
+
+        .trust-number {
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .trust-label {
+            font-size: 0.85rem;
+            color: #666;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        /* Full Width Statement Section */
+        .statement-section {
+            padding: 10rem 4rem;
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .statement-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .statement-content h2 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.4;
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+
+        .statement-content p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.8);
+            font-weight: 300;
+        }
+
+        /* Two Column Section */
+        .two-col-section {
+            padding: 8rem 4rem;
+            background: white;
+        }
+
+        .two-col-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .col-title {
+            position: sticky;
+            top: 140px;
+        }
+
+        .col-title h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+
+        .col-title .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .advantages-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .advantage-item {
+            padding: 3rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .advantage-item:last-child {
+            border-bottom: none;
+        }
+
+        .advantage-number {
+            font-size: 0.85rem;
+            color: #999;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .advantage-item h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .advantage-item p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            font-weight: 300;
+        }
+
+        /* Product Categories - Editorial Style */
+        .products-section {
+            padding: 8rem 4rem;
+            background: #f8f9fa;
+        }
+
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: rgba(0,0,0,0.08);
+        }
+
+        .product-card {
+            background: white;
+            padding: 4rem 3rem;
+            text-align: center;
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            background: #1a1a1a;
+            transform: scale(1.02);
+        }
+
+        .product-card:hover h3 {
+            color: white;
+        }
+
+        .product-card:hover p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .product-card h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+            transition: color 0.4s;
+        }
+
+        .product-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            transition: color 0.4s;
+        }
+
+        /* Stats Section - Full Width */
+        .stats-section {
+            padding: 10rem 4rem;
+            background: white;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 5rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            letter-spacing: 0.5px;
+            line-height: 1.6;
+        }
+
+        /* Final CTA - Full Width Dark */
+        .final-cta {
+            padding: 12rem 4rem;
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            letter-spacing: -1px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 1.2rem 3.5rem;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            border: 2px solid white;
+            transition: all 0.4s;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #1a1a1a;
+        }
+
+        /* Footer - Minimal */
+        footer {
+            background: white;
+            padding: 6rem 4rem 3rem 4rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-section h4 {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.95rem;
+            color: #666;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 300;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #1a1a1a;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .iso-badges {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .iso-badge {
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: #666;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .two-col-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .col-title {
+                position: static;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 1.5rem 2rem;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .hero {
+                padding: 6rem 2rem 3rem 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .trust-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .statement-section {
+                padding: 6rem 2rem;
+            }
+            
+            .statement-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">ALULINE</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#advantages">Why Us</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Rotating Background Images -->
+        <div class="hero-bg">
+            <div class="hero-bg-slide active"></div>
+            <div class="hero-bg-slide"></div>
+            <div class="hero-bg-slide"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <div class="hero-label">ISO-CERTIFIED MANUFACTURER • SINCE 1993</div>
+            <h1>Global manufacturer of <strong>innovative pollution prevention solutions</strong></h1>
+            <p class="hero-subtitle">
+                When major facility managers and blue-chip corporations need pollution prevention systems that work reliably across their entire international estate, they choose Aluline. We're the ISO-certified manufacturer delivering consistent excellence from Dublin to Dubai.
+            </p>
+            <a href="#contact" class="cta-primary">SCHEDULE CONSULTATION</a>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-section">
+        <div class="trust-container">
+            <div class="trust-item">
+                <div class="trust-number">ISO 9001</div>
+                <div class="trust-label">Quality<br>Management</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">ISO 14001</div>
+                <div class="trust-label">Environmental<br>Standards</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">ISO 45001</div>
+                <div class="trust-label">Health &<br>Safety</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">33</div>
+                <div class="trust-label">Years<br>Excellence</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">4</div>
+                <div class="trust-label">Continents<br>Served</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statement Section -->
+    <section class="statement-section">
+        <div class="statement-content">
+            <h2>We manufacture. We don't resell.</h2>
+            <p>Every Aluline system is designed and built in our ISO 9001 certified UK facility. This means consistent quality, full traceability, and a single point of accountability across your entire international estate.</p>
+        </div>
+    </section>
+
+    <!-- Two Column Advantages Section -->
+    <section class="two-col-section" id="advantages">
+        <div class="two-col-container">
+            <div class="col-title">
+                <h2>Why enterprise clients choose Aluline</h2>
+                <p class="subtitle">Unlike distributors who source from multiple suppliers, we control every aspect of design, manufacturing, quality, and support.</p>
+            </div>
+            <div class="advantages-list">
+                <div class="advantage-item">
+                    <div class="advantage-number">01 — MANUFACTURING</div>
+                    <h3>Direct from our UK facility</h3>
+                    <p>ISO-certified manufacturing means consistent quality across your entire estate. When you standardize on Aluline for 100 locations, system #1 and system #100 are identical. Resellers can't guarantee this.</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">02 — INTERNATIONAL PRESENCE</div>
+                    <h3>One partner, four continents</h3>
+                    <p>Operations in Ireland, UK, Portugal, UAE, and expanding Middle East presence. Local teams backed by centralized manufacturing excellence. One specification works everywhere.</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">03 — ENGINEERING EXPERTISE</div>
+                    <h3>33 years of innovation</h3>
+                    <p>Chartered engineers who've pioneered pollution prevention technologies. We designed the world's first above-ground biological grease trap system in 1993. Complex installations, unusual configurations, international compliance—we've solved it all.</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">04 — LIFECYCLE PARTNERSHIP</div>
+                    <h3>Decades, not just the sale</h3>
+                    <p>From initial consultation through design, installation, maintenance, compliance management, and 30-year warranties. We're with you for the entire lifecycle of your facilities.</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">05 — PROVEN RELIABILITY</div>
+                    <h3>30-year warranties reflect confidence</h3>
+                    <p>Stainless steel construction doesn't degrade like plastic or corrode like mild steel. Systems we built in the 1990s are still functioning. We know they'll last because we manufactured them.</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">06 — ENTERPRISE SUPPORT</div>
+                    <h3>Documentation procurement demands</h3>
+                    <p>Multi-site assessments, standardized specifications, remote monitoring, comprehensive compliance documentation. The level of support major corporations require.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="products-container">
+            <div class="section-header">
+                <h2>Innovative pollution prevention solutions</h2>
+                <p>Specialized drainage and separation systems engineered for commercial, industrial, and institutional applications worldwide.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3>Grease Management Systems</h3>
+                    <p>Biological hydro-separators for commercial kitchens and food service facilities</p>
+                </div>
+                <div class="product-card">
+                    <h3>Steam Condensate Traps</h3>
+                    <p>Specialized systems for steam oven applications</p>
+                </div>
+                <div class="product-card">
+                    <h3>Coffee Ground Interceptors</h3>
+                    <p>Protect drainage from high-volume coffee operations</p>
+                </div>
+                <div class="product-card">
+                    <h3>Precious Metal Recovery</h3>
+                    <p>Specialized traps for jewelers and refiners</p>
+                </div>
+                <div class="product-card">
+                    <h3>Clay & Sediment Traps</h3>
+                    <p>Industrial applications for pottery and ceramics</p>
+                </div>
+                <div class="product-card">
+                    <h3>Lint Interceptors</h3>
+                    <p>Commercial laundry and textile operations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">1993</div>
+                <div class="stat-label">Founded and pioneered biological pollution prevention systems</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1000s</div>
+                <div class="stat-label">Systems protecting infrastructure across four continents</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">30</div>
+                <div class="stat-label">Year warranties on stainless steel systems</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">Triple</div>
+                <div class="stat-label">ISO certification 9001 • 14001 • 45001</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="contact">
+        <h2>Ready to partner with the best?</h2>
+        <div class="cta-buttons">
+            <a href="mailto:enquiry@alulinegroup.com" class="btn-outline">SCHEDULE CONSULTATION</a>
+            <a href="tel:01928563532" class="btn-outline">CALL 01928 563532</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Aluline</h4>
+                <p>Global manufacturer of innovative pollution prevention solutions since 1993. ISO 9001, ISO 14001, ISO 45001 certified.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><strong>UK Headquarters</strong></p>
+                <p>Runcorn, Cheshire</p>
+                <p>01928 563532</p>
+                <a href="mailto:enquiry@alulinegroup.com">enquiry@alulinegroup.com</a>
+            </div>
+            <div class="footer-section">
+                <h4>Global Presence</h4>
+                <p>United Kingdom</p>
+                <p>Republic of Ireland</p>
+                <p>Portugal</p>
+                <p>United Arab Emirates</p>
+                <p>Middle East Operations</p>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <a href="#">Capability Statement</a>
+                <a href="#">Technical Specifications</a>
+                <a href="#">CAD Files & Drawings</a>
+                <a href="#">Case Studies</a>
+                <a href="#">ISO Certificates</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Aluline Group Ltd. All Rights Reserved.</p>
+            <div class="iso-badges">
+                <div class="iso-badge">ISO 9001:2015</div>
+                <div class="iso-badge">ISO 14001:2015</div>
+                <div class="iso-badge">ISO 45001:2018</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Background Slideshow Script -->
+    <script>
+        // Hero background slideshow
+        const slides = document.querySelectorAll('.hero-bg-slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Change slide every 5 seconds
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
