@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drains & Channels | Aluline</title>
+    <meta name="description" content="Professional drainage solutions including floor gullies, linear channels, and slot drains for commercial kitchens and industrial facilities.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #2c5aa0;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #555;
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2c5aa0;
+        }
+
+        .breadcrumb {
+            margin-top: 100px;
+            padding: 1rem 3rem;
+            background: #f8f9fa;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+
+        .hero {
+            padding: 4rem 3rem 3rem;
+            background: linear-gradient(135deg, rgba(44,90,160,0.95) 0%, rgba(37,75,135,0.95) 100%);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .filters {
+            padding: 2rem 3rem;
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .filters-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #2c5aa0;
+            color: white;
+            border-color: #2c5aa0;
+        }
+
+        .products-section {
+            padding: 4rem 3rem;
+        }
+
+        .products-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-series {
+            font-size: 0.8rem;
+            color: #2c5aa0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .product-desc {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .product-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .chip {
+            padding: 0.3rem 0.8rem;
+            background: #f8f9fa;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #555;
+            border: 1px solid #e0e0e0;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 3rem 3rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">ALULINE</div>
+            <nav>
+                <a href="../../index.html">Home</a>
+                <a href="../../solutions.html">Solutions</a>
+                <a href="../../why-aluline.html">Why Aluline</a>
+                <a href="../../contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../../index.html">Home</a> / <a href="../">Products</a> / Drains & Channels
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Drains & Channels</h1>
+            <p>Professional stainless steel drainage solutions for commercial kitchens and industrial facilities</p>
+        </div>
+    </section>
+
+    <div class="filters">
+        <div class="filters-content">
+            <div class="filter-group">
+                <span class="filter-label">Series:</span>
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Floor Drains</button>
+                <button class="filter-btn">Linear Channels</button>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">Grade:</span>
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">304</button>
+                <button class="filter-btn">316</button>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">Load Class:</span>
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">EN 1253</button>
+                <button class="filter-btn">EN 1433</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="products-section">
+        <div class="products-grid">
+            <!-- VFG1 - Vertical Floor Gully -->
+            <a href="../fd/vfg1.html" class="product-card">
+                <div class="product-image">[Product Image]</div>
+                <div class="product-content">
+                    <div class="product-series">Floor Drain - FD</div>
+                    <div class="product-title">Vertical Floor Gully (VFG1)</div>
+                    <div class="product-desc">Medium duty floor gully with vertical outlet, available in multiple sizes</div>
+                    <div class="product-chips">
+                        <span class="chip">304 Stainless</span>
+                        <span class="chip">Vertical Outlet</span>
+                        <span class="chip">75-160mm Outlets</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- HFG1 - Horizontal Floor Gully -->
+            <a href="../fd/hfg1.html" class="product-card">
+                <div class="product-image">[Product Image]</div>
+                <div class="product-content">
+                    <div class="product-series">Floor Drain - FD</div>
+                    <div class="product-title">Horizontal Floor Gully (HFG1)</div>
+                    <div class="product-desc">Medium duty floor gully with horizontal outlet, full bore access</div>
+                    <div class="product-chips">
+                        <span class="chip">304 Stainless</span>
+                        <span class="chip">Horizontal Outlet</span>
+                        <span class="chip">75-160mm Outlets</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- HGVT1 - Horizontal Gully Vinyl Type -->
+            <a href="../fd/hgvt1.html" class="product-card">
+                <div class="product-image">[Product Image]</div>
+                <div class="product-content">
+                    <div class="product-series">Floor Drain - FD</div>
+                    <div class="product-title">Horizontal Gully Vinyl Type (HGVT1)</div>
+                    <div class="product-desc">Floor gully designed for vinyl floor finishes, horizontal outlet</div>
+                    <div class="product-chips">
+                        <span class="chip">Vinyl Compatible</span>
+                        <span class="chip">150x150mm</span>
+                        <span class="chip">Horizontal</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- VGVT1 - Vertical Gully Vinyl Type -->
+            <a href="../fd/vgvt1.html" class="product-card">
+                <div class="product-image">[Product Image]</div>
+                <div class="product-content">
+                    <div class="product-series">Floor Drain - FD</div>
+                    <div class="product-title">Vertical Gully Vinyl Type (VGVT1)</div>
+                    <div class="product-desc">Floor gully designed for vinyl floor finishes, vertical outlet</div>
+                    <div class="product-chips">
+                        <span class="chip">Vinyl Compatible</span>
+                        <span class="chip">150x150mm</span>
+                        <span class="chip">Vertical</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- DiFG1 - Double Inlet Floor Gully -->
+            <a href="../fd/difg1.html" class="product-card">
+                <div class="product-image">[Product Image]</div>
+                <div class="product-content">
+                    <div class="product-series">Floor Drain - FD</div>
+                    <div class="product-title">Floor Gully Double Inlet (DiFG1)</div>
+                    <div class="product-desc">Dual inlet floor gully for high flow applications</div>
+                    <div class="product-chips">
+                        <span class="chip">304 Stainless</span>
+                        <span class="chip">Double Inlet</span>
+                        <span class="chip">High Flow</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- SG1 - Shower Gully -->
+            <a href="../fd/sg1.html" class="product-card">
+                <div class="product-image">[Product Image]</div>
+                <div class="product-content">
+                    <div class="product-series">Floor Drain - FD</div>
+                    <div class="product-title">Pedestrian Shower Gully (SG1)</div>
+                    <div class="product-desc">Light duty gully for shower areas and pedestrian zones</div>
+                    <div class="product-chips">
+                        <span class="chip">Light Duty</span>
+                        <span class="chip">Shower Application</span>
+                        <span class="chip">304 Stainless</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 1100 - Horizontal Channel -->
+            <a href="../lc/lc1100.html" class="product-card">
+                <div class="product-image">[Product Image]</div>
+                <div class="product-content">
+                    <div class="product-series">Linear Channel - LC</div>
+                    <div class="product-title">Horizontal Channel 1100</div>
+                    <div class="product-desc">Linear channel with built-in fall for self-draining</div>
+                    <div class="product-chips">
+                        <span class="chip">304 Stainless</span>
+                        <span class="chip">Self-Draining</span>
+                        <span class="chip">0.75 m/s velocity</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 1001 - Vertical Channel -->
+            <a href="../lc/lc1001.html" class="product-card">
+                <div class="product-image">[Product Image]</div>
+                <div class="product-content">
+                    <div class="product-series">Linear Channel - LC</div>
+                    <div class="product-title">Vertical Channel 1001</div>
+                    <div class="product-desc">Linear channel with vertical end outlet, multiple lengths</div>
+                    <div class="product-chips">
+                        <span class="chip">304 Stainless</span>
+                        <span class="chip">Vertical Outlet</span>
+                        <span class="chip">1-5m lengths</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 500AV - Floor Channel -->
+            <a href="../lc/lc500av.html" class="product-card">
+                <div class="product-image">[Product Image]</div>
+                <div class="product-content">
+                    <div class="product-series">Linear Channel - LC</div>
+                    <div class="product-title">Floor Channel 500AV</div>
+                    <div class="product-desc">Versatile channel for tiled and screened floors, cold store applications</div>
+                    <div class="product-chips">
+                        <span class="chip">304 Stainless</span>
+                        <span class="chip">Cold Store</span>
+                        <span class="chip">300-1200mm</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Aluline Group Ltd. All Rights Reserved.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">UK Headquarters: Runcorn, Cheshire | Phone: 01928 563532 | enquiry@alulinegroup.com</p>
+        </div>
+    </footer>
+</body>
+</html>

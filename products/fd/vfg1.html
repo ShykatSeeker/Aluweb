@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Floor Gully (VFG1) | Floor Drains | Aluline</title>
+    <meta name="description" content="Medium duty stainless steel vertical floor gully with removable gratings and odour traps. Available in sizes 200-450mm for commercial kitchens.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #2c5aa0;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #555;
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2c5aa0;
+        }
+
+        .breadcrumb {
+            margin-top: 100px;
+            padding: 1rem 3rem;
+            background: #f8f9fa;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+
+        .hero {
+            padding: 3rem 3rem;
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-series-tag {
+            font-size: 0.8rem;
+            color: #2c5aa0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .chips-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .chip {
+            padding: 0.5rem 1.2rem;
+            background: #f8f9fa;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: #555;
+            border: 1px solid #e0e0e0;
+            font-weight: 500;
+        }
+
+        .chip-highlight {
+            background: #2c5aa0;
+            color: white;
+            border-color: #2c5aa0;
+        }
+
+        .content-section {
+            padding: 3rem 3rem;
+        }
+
+        .content-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .specs-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .specs-table td {
+            color: #555;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2c5aa0;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .applications-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+
+        .applications-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #555;
+        }
+
+        .applications-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2c5aa0;
+            font-size: 1.5rem;
+        }
+
+        .downloads-panel {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .download-item {
+            display: block;
+            padding: 1rem;
+            background: white;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #2c3e50;
+            border: 1px solid #e0e0e0;
+            transition: all 0.2s;
+        }
+
+        .download-item:hover {
+            background: #2c5aa0;
+            color: white;
+            border-color: #2c5aa0;
+        }
+
+        .image-gallery {
+            background: #f8f9fa;
+            height: 400px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1rem;
+        }
+
+        .related-products {
+            padding: 3rem 3rem;
+            background: #f8f9fa;
+        }
+
+        .related-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .product-card h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 3rem 3rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper,
+            .related-grid,
+            .applications-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">ALULINE</div>
+            <nav>
+                <a href="../../index.html">Home</a>
+                <a href="../../solutions.html">Solutions</a>
+                <a href="../../why-aluline.html">Why Aluline</a>
+                <a href="../../contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../../index.html">Home</a> / <a href="../../products/drains-channels/">Drains & Channels</a> / <a href="./">Floor Drains</a> / VFG1
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="product-series-tag">Floor Drain - FD Series</div>
+            <h1>Vertical Floor Gully (VFG1)</h1>
+            <p class="hero-desc">Medium duty stainless steel floor gully with vertical outlet, removable gratings and odour traps for commercial kitchens</p>
+            <div class="chips-row">
+                <span class="chip chip-highlight">304 Stainless Steel</span>
+                <span class="chip">Vertical Outlet</span>
+                <span class="chip">EN 1253</span>
+                <span class="chip">75-160mm Outlets</span>
+                <span class="chip">Height Adjustable</span>
+                <span class="chip">Odour Trap</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="content-wrapper">
+            <div>
+                <h2 class="section-title">Specifications</h2>
+                <table class="specs-table">
+                    <tr>
+                        <th>Specification</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td>Model Code</td>
+                        <td>VFG1</td>
+                    </tr>
+                    <tr>
+                        <td>Series</td>
+                        <td>Floor Drain - Medium Duty</td>
+                    </tr>
+                    <tr>
+                        <td>Material & Grade</td>
+                        <td>304 Stainless Steel</td>
+                    </tr>
+                    <tr>
+                        <td>Standard</td>
+                        <td>EN 1253</td>
+                    </tr>
+                    <tr>
+                        <td>Outlet Type</td>
+                        <td>Vertical</td>
+                    </tr>
+                    <tr>
+                        <td>Outlet Options</td>
+                        <td>75mm, 110mm, 160mm</td>
+                    </tr>
+                    <tr>
+                        <td>Grating Sizes (L/W/H)</td>
+                        <td>200x200x30mm<br>300x300x30mm<br>400x400x30mm<br>450x450x40mm</td>
+                    </tr>
+                    <tr>
+                        <td>Depth Options</td>
+                        <td>60-100mm (200mm grating)<br>100mm (300-450mm gratings)</td>
+                    </tr>
+                    <tr>
+                        <td>Grate Type</td>
+                        <td>Perforated stainless steel, removable</td>
+                    </tr>
+                    <tr>
+                        <td>Hygiene Features</td>
+                        <td>Removable gratings, odour traps, waste baskets, rodding ports</td>
+                    </tr>
+                </table>
+
+                <h2 class="section-title">Key Features</h2>
+                <ul class="features-list">
+                    <li>Height adjustable units for precise installation</li>
+                    <li>Removable gratings for easy cleaning</li>
+                    <li>Built-in odour traps prevent smell escape</li>
+                    <li>Rodding ports for maintenance access</li>
+                    <li>Waste baskets trap solid debris</li>
+                    <li>304 stainless steel construction</li>
+                    <li>Self-cleaning surface finish</li>
+                    <li>Multiple outlet size options (75-160mm)</li>
+                </ul>
+
+                <h2 class="section-title" style="margin-top: 2rem;">Applications</h2>
+                <ul class="applications-list">
+                    <li>Commercial Kitchens</li>
+                    <li>Industrial Food Processing</li>
+                    <li>Pharmaceutical Facilities</li>
+                    <li>Chemical Processing</li>
+                    <li>Hospital Kitchens</li>
+                    <li>University Dining Halls</li>
+                    <li>Hotel Kitchens</li>
+                    <li>Restaurant Kitchens</li>
+                </ul>
+
+                <div class="downloads-panel">
+                    <h3 style="margin-bottom: 1rem; color: #2c3e50;">Downloads</h3>
+                    <a href="#" class="download-item">📄 Product Datasheet (PDF)</a>
+                    <a href="#" class="download-item">📄 Declaration of Performance</a>
+                    <a href="#" class="download-item">📄 ISO 9001 Certificate</a>
+                </div>
+            </div>
+
+            <div>
+                <div class="image-gallery">
+                    [Product Image Gallery]<br>
+                    Vertical Floor Gully - VFG1
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-products">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 class="section-title">Related Floor Drains</h2>
+            <div class="related-grid">
+                <a href="hfg1.html" class="product-card">
+                    <h4>Horizontal Floor Gully (HFG1)</h4>
+                    <p>Medium duty floor gully with horizontal outlet and full bore access</p>
+                </a>
+                <a href="difg1.html" class="product-card">
+                    <h4>Double Inlet Floor Gully (DiFG1)</h4>
+                    <p>Dual inlet configuration for high flow applications</p>
+                </a>
+                <a href="vgvt1.html" class="product-card">
+                    <h4>Vertical Gully Vinyl Type (VGVT1)</h4>
+                    <p>Floor gully designed for vinyl floor finishes</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Aluline Group Ltd. All Rights Reserved.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">UK Headquarters: Runcorn, Cheshire | Phone: 01928 563532 | enquiry@alulinegroup.com</p>
+        </div>
+    </footer>
+</body>
+</html>
